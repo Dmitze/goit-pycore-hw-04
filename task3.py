@@ -15,14 +15,14 @@ def display_directory_structure(directory_path, indent=""):
         return
 
     # Виводимо назву поточної директорії
-    print(indent + Fore.BLUE + f"📁 {path.name}/")
+    print(indent + Fore.BLUE + f" {path.name}/")
 
     for item in sorted(path.iterdir()):
         if item.is_dir():
             # Рекурсивний виклик для піддиректорій
             display_directory_structure(item, indent + "    ")
         else:
-            print(indent + "    " + Fore.GREEN + f"📜 {item.name}")
+            print(indent + "    " + Fore.GREEN + f" {item.name}")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
